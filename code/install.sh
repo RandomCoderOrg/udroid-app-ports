@@ -86,5 +86,6 @@ cat << EOF > /usr/bin/code-root
 #!/bin/bash
 code --user-data-dir=vscocderoot --unity-launch --no-sandbox "\$@"
 EOF
+chmod +x /usr/bin/code-root
 msg "Done"
 msg "Now you can start using Visual Studio Code with the command 'code-root'"
