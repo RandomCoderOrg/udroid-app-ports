@@ -79,7 +79,7 @@ fi
 shout "Downloading VSCODE..."
 _download   "$link"
 shout "Trying to install VSCODE... [ file: $(basename "${URLPREFIX}${URL}") ]"
-dpkg -i     "$link" || die "Failed to install VSCODE"
+dpkg -i $(basename "$link") || die "Failed to install VSCODE"
 shout "Fixing for root user.."
 sed -i 's/--unity-launch/--no-sandbox --user-data-dir=vscoderoot --unity-launch/' /usr/share/applications/code.desktop || die "Failed to fix for root user"
 cat << EOF > /usr/bin/code-root
