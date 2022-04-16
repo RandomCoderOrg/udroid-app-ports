@@ -22,7 +22,7 @@ if [ $(id -u) != 0 ]; then
 fi
 
 # remove old ubuntu packages
-shout "Trying to remove ubuntuu chrome packages.."
+shout "Trying to remove ubuntu chrome packages.."
 apt remove --purge -y $packages
 apt autoremove -y
 
