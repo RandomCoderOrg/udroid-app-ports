@@ -84,5 +84,5 @@ cat << EOF > /usr/bin/chromium-nosandbox
 EOF
 
 shout "chromium installation complete"
-msg "now you can use ${_c_green}chromium-nosandbox to start chromium form terminal for root users.."
+msg "now you can use ${_c_green}chromium-nosandbox${RST} to start chromium form terminal for root users.."
 
