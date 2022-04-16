@@ -61,7 +61,7 @@ Package: chromium*
 Pin: origin "deb.debian.org"
 Pin-Priority: 700
 EOF
-lshot "Done.. [/etc/apt/preferences.d/chromium.pref]"
+lshout "Done.. [/etc/apt/preferences.d/chromium.pref]"
 
 shout "upgrading apt indexes"
 lshout "${_c_green}apt-get clean"
