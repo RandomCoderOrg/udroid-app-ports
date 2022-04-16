@@ -12,6 +12,10 @@ shout()  { echo -e "${_c_blue}[-] ${*}${RST}";:;}
 lshout() { echo -e "${_c_blue}-> ${*}${RST}";:;}
 msg()    { echo -e "${*} \e[0m" >&2;:;}
 
+# ----------------
+# Based on a udroid wiki: https://github.com/RandomCoderOrg/ubuntu-on-android/wiki/chromium-in-udroid
+# ----------------
+
 ### Chromium
 packages="chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra"
 
@@ -71,4 +75,14 @@ apt-get update || die "Failed to update package indexes.."
 
 shout "Installing chromium.."
 apt-get install chromium -y || die "Failed to install chromium"
+
+shout "Fixing desktop launcher"
+sed -i 's/\/usr\/bin\/chromium/\/usr\/bin\/chromium --no-sandbox/' /usr/share/applications/chromium.desktop || die "Failed to fix launcher"
+shout "Adding /usr/bin/chromium-nosandbox.."
+cat << EOF > /usr/bin/chromium-nosandbox
+/usr/bin/chromium --no-sandbox \$@
+EOF
+
+shout "chromium installation complete"
+msg "now you can use ${_c_green}chromium-nosandbox to start chromium form terminal for root users.."
 
