@@ -82,6 +82,7 @@ shout "Adding /usr/bin/chromium-nosandbox.."
 cat << EOF > /usr/bin/chromium-nosandbox
 /usr/bin/chromium --no-sandbox \$@
 EOF
+chmod +x /usr/bin/chromium-nosandbox
 
 shout "chromium installation complete"
 msg "now you can use ${_c_green}chromium-nosandbox${RST} to start chromium form terminal for root users.."
