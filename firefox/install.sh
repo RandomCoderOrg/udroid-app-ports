@@ -69,6 +69,6 @@ lshout "${_c_green}apt-get update"
 apt-get update || die "Failed to update package indexes.."
 
 shout "Installing $package.."
-apt-get install chromium -y || die "Failed to install chromium"
+apt-get install $package -y || die "Failed to install $package"
 
 shout "Installation done."
